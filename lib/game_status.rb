@@ -49,3 +49,16 @@ def draw?(board)
         false
       end
   end
+
+  def winner(board)
+    if won?(board) != nil
+      winCombo = won?(board)
+      if board[winCombo[0]] == "X"
+      "X"
+      elsif board[winCombo[0]] == "O"
+      "O"
+      end
+    else
+      nil
+    end
+  end
