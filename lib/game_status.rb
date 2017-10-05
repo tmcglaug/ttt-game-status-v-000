@@ -14,3 +14,16 @@ WIN_COMBINATIONS = [
   [0, 4, 8], #left-to-right cross
   [2, 4, 6] #right-to-left cross
 ]
+
+def won?(board)
+  WIN_COMBINATIONS.each do |combo|
+    if combo.all?{|i| board[i] == "X"} || combo.all?{|i| board[i] == "O"}
+      return combo
+    elsif board.all?{|i| i == " " || i = nil}
+     return false
+    end
+  end
+ if board.all?{|i| i == "X" || i == "O"}
+ return false
+ end
+end
